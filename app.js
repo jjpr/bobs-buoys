@@ -5,6 +5,7 @@ var path = require('path');
 var app = express();
 
 app.use('/data', express.static("data"));
+app.use('/static', express.static("static"));
 app.use('/data', serveIndex('data', {'icons': true, 'view': 'details'}));
 app.get("/", function (req, res, next) {
   res.sendFile(path.join(__dirname, "index.html"));
